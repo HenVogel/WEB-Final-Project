@@ -1,250 +1,201 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>WEB-115 Final Project</title>
-  <style> 
-    /* Styling for the header */ 
-    header {
-      width: 100%;
-      height: 400px; /* Adjust the height as needed */ 
-      background-image: url(WEB_FINAL_Background5.jpg); /* Path to your image */ 
-      background-size: cover; /* Ensures the image covers the entire header */ 
-      background-position: center; /* Centers the image */ 
-      background-repeat: repeat; /* Prevents the image from repeating */ 
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Planner</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif; /* Set font style */
+            margin: 20px; /* Add space around the content */
+            padding: 20px; /* Add internal spacing */
+            text-align: center; /* Center headings and banners */
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #6e7f7f;
-      color: #333;
-    }
+        /* Styling for the banner at the top of the page */
+        .banner {
+            width: 100%; /* Full width banner */
+            background-color: #007BFF; /* Blue background color */
+            color: white; /* White text color */
+            text-align: center; /* Center text inside the banner */
+            padding: 15px 0; /* Vertical padding */
+            font-size: 24px; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            margin-bottom: 20px; /* Space below the banner */
+        }
 
-    h1 {
-      text-align: center; /* Specifically centers the "Weekly Meal Planner" heading */
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
+        /* Styling for the main heading */
+        h1 {
+            text-align: center; /* Center the heading */
+            font-size: 32px; /* Larger font size for emphasis */
+            margin-bottom: 30px; /* Add space below the heading */
+        }
 
-    form {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: rgb(250, 250, 250);
-    }
+        /* Table styling for meal input sections */
+        table {
+            width: 100%; /* Full width table */
+            border-collapse: collapse; /* Merge table borders */
+            margin: 20px 0; /* Add space above and below the table */
+        }
 
-    form label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+        /* Styling for table borders */
+        table, th, td {
+            border: 1px solid #ccc; /* Light gray borders */
+        }
 
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+        /* Styling for table headers */
+        table th {
+            background-color: #f4f4f4; /* Light background color */
+        }
 
-    form textarea {
-      height: 10px;
-    }
+        /* Center content within table cells */
+        table td {
+            text-align: center; /* Center align text horizontally */
+            vertical-align: middle; /* Center align text vertically */
+        }
 
-    form button {
-      background-color: #5f79a0;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-    }
+        /* Center text and adjust input field dimensions */
+        table input {
+            text-align: center; /* Center align text inside input fields */
+            width: 90%; /* Adjust width of input fields */
+            box-sizing: border-box; /* Include padding and borders in width */
+        }
 
-    form button:hover {
-      background-color: #5f79a0;
-    }
+        /* Form section styling */
+        .form-section {
+            margin-bottom: 20px; /* Add space below each section */
+        }
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-    }
+        /* Button group styling */
+        .button-group {
+            margin-top: 20px; /* Add space above the buttons */
+        }
 
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 95%;
-      text-align: left;
-    }
+        /* Styling for buttons */
+        button {
+            margin-right: 10px; /* Add spacing between buttons */
+            padding: 10px 15px; /* Button size */
+            border: none; /* Remove borders */
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            cursor: pointer; /* Show pointer on hover */
+        }
 
-    table th, table td {
-        border: 2px solid #646060;
-        padding: 15px;
-    }
-
-    table th {
-        background-color: #5f79a0;
-        color: white;
-    }
-
-    table td {
-      text-align: center; /* Centers text within the table cells */
-      vertical-align: middle; /* Vertically centers content in the cells */
-    }
-
-    table input {
-      text-align: center; /* Centers text within the input field */
-      width: 90%; /* Ensures the input field doesn't take up too much space */
-      box-sizing: border-box; /* Makes the width include padding and borders */
-    }
-
-    /* Optional styling for content inside the header */
-/* 
-    header h1 {
-      margin:0;
-      padding:0;
-      font-family: 'Franklin Gothic Medium';
-      font-size: 300%;
-      text-align: center; 
-      color: rgb(0, 0, 0); 
-      padding-top: 90px;
-      text-shadow: 0 0 100px #ffffff;
-    }
-
-    header h3 {
-      margin:0;
-      padding:0;
-      font-family: 'Franklin Gothic Medium';
-      font-size: 180%;
-      text-align: center; 
-      color: rgb(0, 0, 0); 
-      padding-top: 40px;
-    }
-
-    header p {
-      margin:0;
-      padding:0;
-      font-family: 'Franklin Gothic Medium';
-      font-size: 100%;
-      text-align: center; 
-      color: rgb(0, 0, 0); 
-      padding-top: 40px;
-    }
-
-    header p2 {
-      margin:0;
-      padding:0;
-      font-family: 'Franklin Gothic Medium';
-      font-size: 100%;
-      text-align: center; 
-      color: rgb(0, 0, 0); 
-      padding-top: 0px;
-    }
-*/
-
-  </style> 
-</head> 
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #0056b3; /* Darker blue background */
+        }
+    </style>
+</head>
 <body>
-  <header>
-    <h1></h1>
-  </header>
+    <!-- Banner at the top of the page -->
+    <div class="banner">
+        Build Your Meal Plan
+    </div>
 
-  <h1>Weekly Meal Planner</h1>
-  <form id="mealForm">
-      <div class="form-section">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-section">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-section">
-          <label for="goal">Weekly Goal:</label>
-          <input type="text" id="goal" name="goal">
-      </div>
+    <!-- Main heading -->
+    <h1>Weekly Meal Planner</h1>
 
-      <h2>Enter Meals for Each Day</h2>
-      <table>
-          <tr>
-              <th>Day</th>
-              <th>Breakfast</th>
-              <th>Snack 1</th>
-              <th>Lunch</th>
-              <th>Snack 2</th>
-              <th>Dinner</th>
-          </tr>
-          <!-- Repeat rows for each day -->
-          <tr>
-              <td>Monday</td>
-              <td><input type="text" id="Monday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Monday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Monday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Monday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Monday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <tr>
-              <td>Tuesday</td>
-              <td><input type="text" id="Tuesday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Tuesday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Tuesday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Tuesday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Tuesday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <!-- Repeat for other days -->
-          <tr>
-              <td>Wednesday</td>
-              <td><input type="text" id="Wednesday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Wednesday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Wednesday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Wednesday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Wednesday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <tr>
-              <td>Thursday</td>
-              <td><input type="text" id="Thursday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Thursday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Thursday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Thursday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Thursday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <tr>
-              <td>Friday</td>
-              <td><input type="text" id="Friday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Friday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Friday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Friday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Friday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <tr>
-              <td>Saturday</td>
-              <td><input type="text" id="Saturday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Saturday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Saturday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Saturday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Saturday-dinner" placeholder="Dinner"></td>
-          </tr>
-          <tr>
-              <td>Sunday</td>
-              <td><input type="text" id="Sunday-breakfast" placeholder="Breakfast"></td>
-              <td><input type="text" id="Sunday-snack1" placeholder="Snack 1"></td>
-              <td><input type="text" id="Sunday-lunch" placeholder="Lunch"></td>
-              <td><input type="text" id="Sunday-snack2" placeholder="Snack 2"></td>
-              <td><input type="text" id="Sunday-dinner" placeholder="Dinner"></td>
-          </tr>
-      </table>
+    <!-- Form for user input -->
+    <form id="mealForm">
+        <!-- Section for user's personal details -->
+        <div class="form-section">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required> <!-- Name input -->
+        </div>
+        <div class="form-section">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> <!-- Email input -->
+        </div>
+        <div class="form-section">
+            <label for="goal">Weekly Goal:</label>
+            <input type="text" id="goal" name="goal"> <!-- Weekly goal input -->
+        </div>
 
-      <div class="button-group">
-          <button type="button" onclick="clearForm()">Clear Form</button>
-          <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button>
-          <button type="button" onclick="downloadMealPlan()">Download Meal Plan</button>
-      </div>
-  </form>
+        <!-- Section for meal plan inputs -->
+        <h2>Enter Meals for Each Day</h2>
+        <table>
+            <!-- Table headers -->
+            <tr>
+                <th>Day</th>
+                <th>Breakfast</th>
+                <th>Snack 1</th>
+                <th>Lunch</th>
+                <th>Snack 2</th>
+                <th>Dinner</th>
+            </tr>
 
-  <script src="projectJS.js"></script>
-</body>
+            <!-- Table rows for each day -->
+            <!-- Monday -->
+            <tr>
+                <td>Monday</td>
+                <td><input type="text" id="Monday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Monday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Monday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Monday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Monday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <!-- Repeat the structure for other days -->
+            <tr>
+                <td>Tuesday</td>
+                <td><input type="text" id="Tuesday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Tuesday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Tuesday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Tuesday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Tuesday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td><input type="text" id="Wednesday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Wednesday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Wednesday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Wednesday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Wednesday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td><input type="text" id="Thursday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Thursday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Thursday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Thursday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Thursday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td><input type="text" id="Friday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Friday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Friday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Friday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Friday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td><input type="text" id="Saturday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Saturday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Saturday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Saturday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Saturday-dinner" placeholder="Dinner"></td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td><input type="text" id="Sunday-breakfast" placeholder="Breakfast"></td>
+                <td><input type="text" id="Sunday-snack1" placeholder="Snack 1"></td>
+                <td><input type="text" id="Sunday-lunch" placeholder="Lunch"></td>
+                <td><input type="text" id="Sunday-snack2" placeholder="Snack 2"></td>
+                <td><input type="text" id="Sunday-dinner" placeholder="Dinner"></td>
+            </tr>
+        </table>
+
+        <!-- Buttons for user actions -->
+        <div class="button-group">
+            <button type="button" onclick="clearForm()">Clear Form</button> <!-- Clear all inputs -->
+            <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button> <!-- Generate meal plan -->
+            <button type="button" onclick="downloadMealPlan()">Download Meal Plan</button> <!-- Download as file -->
+        </div>
+    </form>
+
+    <!-- Link to external JavaScript file -->
+    <script src="projectJS.js"></script>
 </body>
 </html>
